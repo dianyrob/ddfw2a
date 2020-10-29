@@ -31,9 +31,11 @@ import com.w2a.utilities.TestUtil;
 public class CustomListeners extends TestBase implements ITestListener,ISuiteListener {
 
 	static Date d = new Date();
-	static String fileName = "Extent_" + d.toString().replace(":", "_").replace(" ", "_") + ".html";
+//	static String fileName = "Extent_" + d.toString().replace(":", "_").replace(" ", "_") + ".html";
+	static String fileName = "Extent.html";
+
 	static String messageBody;
-	private static ExtentReports extent = ExtentManager.createInstance(System.getProperty("user.dir")+"/reports/"+fileName);
+	private static ExtentReports extent = ExtentManager.createInstance(System.getProperty("user.dir")+"/target/Extentreports/"+fileName);
 	public static ThreadLocal<ExtentTest> testReport = new ThreadLocal<ExtentTest>();
 	
 
@@ -107,7 +109,7 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 		 
 		try {
 			messageBody = "http://" + InetAddress.getLocalHost().getHostAddress()
-					+ ":8080/job/DataDrivenLiveProject/Extent_Reports/";
+					+ ":8080/job/DDLMav/Extent_20Reports/";
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
